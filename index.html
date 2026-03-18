@@ -1241,7 +1241,7 @@ function calculate() {
   // CHART — BEV Breakdown (Doughnut)
   const bevBreakdown = [bevFuelYear, bevServiceYear, bevRepairYear, bevWearYear, bevTollYear, bevInsYear, driverCost];
   const bevLabels = ['Electricity', 'Service', 'Repair', 'Wear & Tear', 'Toll/LSVA', 'Insurance', 'Driver'];
-  const bevColors = ['#6C5CE7', '#A29BFE', '#D6BCFA', '#B8A9FE', '#00B894', '#00A381', '#0984E3'];
+  const bevColors = ['#6C5CE7', '#A29BFE', '#D6BCFA', '#B8A9FE', '#8B7FF0', '#5A4BD1', '#9B8FFF'];
   charts.breakBev = new Chart(document.getElementById('chartBreakdownBev'), {
     type: 'doughnut',
     data: { labels: bevLabels, datasets: [{ data: bevBreakdown, backgroundColor: bevColors, borderWidth: 2, borderColor: '#fff' }] },
