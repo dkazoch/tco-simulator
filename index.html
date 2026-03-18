@@ -1215,7 +1215,8 @@ function calculate() {
   // CHART — ICE Breakdown (Doughnut)
   const iceBreakdown = [iceFuelYear, iceServiceYear, iceRepairYear, iceWearYear, iceTollYear, iceInsYear, driverCost];
   const breakdownLabels = ['Fuel', 'Service', 'Repair', 'Wear & Tear', 'Toll/LSVA', 'Insurance', 'Driver'];
-  const iceColors = ['#E17055', '#FDCB6E', '#F6E58D', '#FAD390', '#E67E22', '#F39C12', '#D35400'];
+  const sharedColors = ['#81ECEC', '#FDCB6E', '#74B9FF', '#FDA7DF', '#B2BEC3', '#636E72'];
+  const iceColors = ['#E17055', ...sharedColors];
   charts.breakIce = new Chart(document.getElementById('chartBreakdownIce'), {
     type: 'doughnut',
     data: { labels: breakdownLabels, datasets: [{ data: iceBreakdown, backgroundColor: iceColors, borderWidth: 2, borderColor: '#fff' }] },
@@ -1228,7 +1229,7 @@ function calculate() {
   // CHART — H2 Breakdown (Doughnut)
   const h2Breakdown = [h2FuelYear, h2ServiceYear, h2RepairYear, h2WearYear, h2TollYear, h2InsYear, driverCost];
   const h2Labels = ['H₂ Fuel', 'Service', 'Repair', 'Wear & Tear', 'Toll/LSVA', 'Insurance', 'Driver'];
-  const h2Colors = ['#00B894', '#00A381', '#2ED8A3', '#55E6BC', '#7EEFD0', '#A8F5E0', '#00D2A0'];
+  const h2Colors = ['#00B894', ...sharedColors];
   charts.breakH2 = new Chart(document.getElementById('chartBreakdownH2'), {
     type: 'doughnut',
     data: { labels: h2Labels, datasets: [{ data: h2Breakdown, backgroundColor: h2Colors, borderWidth: 2, borderColor: '#fff' }] },
@@ -1241,7 +1242,7 @@ function calculate() {
   // CHART — BEV Breakdown (Doughnut)
   const bevBreakdown = [bevFuelYear, bevServiceYear, bevRepairYear, bevWearYear, bevTollYear, bevInsYear, driverCost];
   const bevLabels = ['Electricity', 'Service', 'Repair', 'Wear & Tear', 'Toll/LSVA', 'Insurance', 'Driver'];
-  const bevColors = ['#6C5CE7', '#A29BFE', '#D6BCFA', '#B8A9FE', '#8B7FF0', '#5A4BD1', '#9B8FFF'];
+  const bevColors = ['#6C5CE7', ...sharedColors];
   charts.breakBev = new Chart(document.getElementById('chartBreakdownBev'), {
     type: 'doughnut',
     data: { labels: bevLabels, datasets: [{ data: bevBreakdown, backgroundColor: bevColors, borderWidth: 2, borderColor: '#fff' }] },
