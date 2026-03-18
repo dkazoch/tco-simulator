@@ -1182,7 +1182,7 @@ function calculate() {
       labels: labelsY,
       datasets: [
         { label: 'Diesel TCO', data: data.map(d => d.iceCum), borderColor: '#E17055', backgroundColor: 'rgba(225,112,85,0.1)', fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 7, borderWidth: 3 },
-        { label: 'H₂ TCO', data: data.map(d => d.h2Cum), borderColor: '#003082', backgroundColor: 'rgba(0,48,130,0.08)', fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 7, borderWidth: 3 },
+        { label: 'H₂ TCO', data: data.map(d => d.h2Cum), borderColor: '#00B894', backgroundColor: 'rgba(0,184,148,0.08)', fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 7, borderWidth: 3 },
         { label: 'BEV TCO', data: data.map(d => d.bevCum), borderColor: '#6C5CE7', backgroundColor: 'rgba(108,92,231,0.08)', fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 7, borderWidth: 3 }
       ]
     },
@@ -1201,7 +1201,7 @@ function calculate() {
       labels: labelsKm,
       datasets: [
         { label: 'Diesel TCO', data: data.map(d => d.iceCum), borderColor: '#E17055', backgroundColor: 'rgba(225,112,85,0.1)', fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 7, borderWidth: 3 },
-        { label: 'H₂ TCO', data: data.map(d => d.h2Cum), borderColor: '#003082', backgroundColor: 'rgba(0,48,130,0.08)', fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 7, borderWidth: 3 },
+        { label: 'H₂ TCO', data: data.map(d => d.h2Cum), borderColor: '#00B894', backgroundColor: 'rgba(0,184,148,0.08)', fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 7, borderWidth: 3 },
         { label: 'BEV TCO', data: data.map(d => d.bevCum), borderColor: '#6C5CE7', backgroundColor: 'rgba(108,92,231,0.08)', fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 7, borderWidth: 3 }
       ]
     },
@@ -1228,7 +1228,7 @@ function calculate() {
   // CHART — H2 Breakdown (Doughnut)
   const h2Breakdown = [h2FuelYear, h2ServiceYear, h2RepairYear, h2WearYear, h2TollYear, h2InsYear, driverCost];
   const h2Labels = ['H₂ Fuel', 'Service', 'Repair', 'Wear & Tear', 'Toll/LSVA', 'Insurance', 'Driver'];
-  const h2Colors = ['#003082', '#0052D4', '#5DADE2', '#74B9FF', '#00B894', '#00A381', '#0984E3'];
+  const h2Colors = ['#00B894', '#00A381', '#2ED8A3', '#55E6BC', '#7EEFD0', '#A8F5E0', '#00D2A0'];
   charts.breakH2 = new Chart(document.getElementById('chartBreakdownH2'), {
     type: 'doughnut',
     data: { labels: h2Labels, datasets: [{ data: h2Breakdown, backgroundColor: h2Colors, borderWidth: 2, borderColor: '#fff' }] },
@@ -1260,8 +1260,8 @@ function calculate() {
         {
           label: 'H₂ Savings vs. Diesel',
           data: data.map(d => d.diffH2),
-          backgroundColor: 'rgba(0,48,130,0.7)',
-          borderColor: '#003082',
+          backgroundColor: 'rgba(0,184,148,0.7)',
+          borderColor: '#00B894',
           borderWidth: 2,
           borderRadius: 6
         },
