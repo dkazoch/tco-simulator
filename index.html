@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TCO Simulator — H₂ vs. Diesel vs. BEV Truck</title>
+<title>TCO Simulator â Hâ vs. Diesel vs. BEV Truck</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
@@ -540,16 +540,16 @@
 <div class="hero">
   <div class="hero-inner">
     <div class="hero-text">
-      <div class="hero-badge">⚡ TCO Analysis Tool</div>
-      <h1>H₂ <span>vs.</span> Diesel <span>vs.</span> BEV</h1>
+      <div class="hero-badge">â¡ TCO Analysis Tool</div>
+      <h1>Hâ <span>vs.</span> Diesel <span>vs.</span> BEV</h1>
       <h1 style="font-size:22px; font-weight:400; margin-bottom:12px;">Total Cost of Ownership Simulator</h1>
       <p>Compare the total cost of ownership of hydrogen fuel cell trucks, battery electric trucks, and conventional diesel vehicles over their entire operating lifetime.</p>
     </div>
     <div class="hero-truck">
       <div class="truck-placeholder">
-        <div class="truck-icon">🚛</div>
+        <div class="truck-icon">ð</div>
         <div class="truck-label">TCO Simulator</div>
-        <div class="truck-sub">H₂ vs. Diesel vs. BEV — Compare & Decide</div>
+        <div class="truck-sub">Hâ vs. Diesel vs. BEV â Compare & Decide</div>
       </div>
     </div>
   </div>
@@ -560,7 +560,7 @@
   <!-- GENERAL PARAMETERS -->
   <div class="general-card">
     <div class="card-header">
-      <div class="card-icon">⚙</div>
+      <div class="card-icon">â</div>
       <div>
         <div class="card-title">General Parameters</div>
         <div class="card-subtitle">Usage profile and acquisition</div>
@@ -568,7 +568,7 @@
     </div>
     <!-- Usage Profile -->
     <div class="param-cluster">
-      <div class="cluster-label"><span>📊</span> Usage Profile</div>
+      <div class="cluster-label"><span>ð</span> Usage Profile</div>
       <div class="cluster-grid-4">
         <div class="form-group">
           <label>Annual Mileage (km)</label>
@@ -594,42 +594,65 @@
 
     <!-- Purchase Price -->
     <div class="param-cluster">
-      <div class="cluster-label"><span>💰</span> Purchase Price</div>
+      <div class="cluster-label"><span>ð°</span> Purchase Price</div>
       <div class="cluster-grid-3">
         <div class="form-group">
-          <div class="col-header diesel">⛽ Diesel</div>
+          <div class="col-header diesel">â½ Diesel</div>
           <label>Purchase Price (CHF)</label>
           <input type="number" id="priceIce" value="120000" step="1000">
         </div>
         <div class="form-group">
-          <div class="col-header h2">H₂ FCEV</div>
+          <div class="col-header h2">Hâ FCEV</div>
           <label>Purchase Price (CHF)</label>
           <input type="number" id="priceH2" value="0" step="1000">
         </div>
         <div class="form-group">
-          <div class="col-header bev">🔋 BEV</div>
+          <div class="col-header bev">ð BEV</div>
           <label>Purchase Price (CHF)</label>
           <input type="number" id="priceBev" value="250000" step="1000">
         </div>
       </div>
     </div>
 
-    <!-- Residual Value -->
+    
+    <!-- Subsidies -->
     <div class="param-cluster">
-      <div class="cluster-label"><span>📉</span> Residual Value after Analysis Period</div>
+      <div class="cluster-label"><span>💸</span> Subsidies (deducted from purchase price)</div>
       <div class="cluster-grid-3">
         <div class="form-group">
           <div class="col-header diesel">⛽ Diesel</div>
+          <label>Subsidies (CHF)</label>
+          <input type="number" id="subsidyIce" value="0" step="1000">
+        </div>
+        <div class="form-group">
+          <div class="col-header h2">H₂ FCEV</div>
+          <label>Subsidies (CHF)</label>
+          <input type="number" id="subsidyH2" value="0" step="1000">
+        </div>
+        <div class="form-group">
+          <div class="col-header bev">🔋 BEV</div>
+          <label>Subsidies (CHF)</label>
+          <input type="number" id="subsidyBev" value="0" step="1000">
+        </div>
+      </div>
+    </div>
+
+    <!-- Residual Value -->
+    <div class="param-cluster">
+      <div class="cluster-label"><span>ð</span> Residual Value after Analysis Period</div>
+      <div class="cluster-grid-3">
+        <div class="form-group">
+          <div class="col-header diesel">â½ Diesel</div>
           <label>Residual Value (CHF)</label>
           <input type="number" id="residualIce" value="25000" step="1000">
         </div>
         <div class="form-group">
-          <div class="col-header h2">H₂ FCEV</div>
+          <div class="col-header h2">Hâ FCEV</div>
           <label>Residual Value (CHF)</label>
           <input type="number" id="residualH2" value="0" step="1000">
         </div>
         <div class="form-group">
-          <div class="col-header bev">🔋 BEV</div>
+          <div class="col-header bev">ð BEV</div>
           <label>Residual Value (CHF)</label>
           <input type="number" id="residualBev" value="40000" step="1000">
         </div>
@@ -638,13 +661,13 @@
 
     <!-- Energy Price per Year -->
     <div class="param-cluster">
-      <div class="cluster-label"><span>⚡</span> Energy Price per Year — adjust for expected price changes</div>
+      <div class="cluster-label"><span>â¡</span> Energy Price per Year â adjust for expected price changes</div>
       <div id="energyTableWrap"></div>
     </div>
 
     <!-- Toll / LSVA per Year -->
     <div class="param-cluster">
-      <div class="cluster-label"><span>🛣️</span> Toll / LSVA Rate per Year (CHF/km) — enter 0 if exempt</div>
+      <div class="cluster-label"><span>ð£ï¸</span> Toll / LSVA Rate per Year (CHF/km) â enter 0 if exempt</div>
       <div id="tollTableWrap"></div>
     </div>
   </div>
@@ -654,7 +677,7 @@
     <!-- ICE -->
     <div class="input-card ice-card">
       <div class="card-header">
-        <div class="card-icon">⛽</div>
+        <div class="card-icon">â½</div>
         <div>
           <div class="card-title">Diesel Truck (ICE)</div>
           <div class="card-subtitle">Conventional combustion engine</div>
@@ -687,7 +710,7 @@
     <!-- H2 -->
     <div class="input-card h2-card">
       <div class="card-header">
-        <div class="card-icon">H₂</div>
+        <div class="card-icon">Hâ</div>
         <div>
           <div class="card-title">Hydrogen Truck (FCEV)</div>
           <div class="card-subtitle">Fuel cell electric drive</div>
@@ -695,7 +718,7 @@
       </div>
       <div class="form-grid">
         <div class="form-group">
-          <label>Consumption (kg H₂/100km)</label>
+          <label>Consumption (kg Hâ/100km)</label>
           <input type="number" id="h2Consumption" value="8.5" step="0.1">
         </div>
         <div class="form-group">
@@ -720,7 +743,7 @@
     <!-- BEV -->
     <div class="input-card bev-card">
       <div class="card-header">
-        <div class="card-icon">🔋</div>
+        <div class="card-icon">ð</div>
         <div>
           <div class="card-title">Battery Truck (BEV)</div>
           <div class="card-subtitle">Battery electric drive</div>
@@ -753,7 +776,7 @@
 
   <!-- CALCULATE BUTTON -->
   <div class="calc-button-wrap">
-    <button class="calc-button" onclick="calculate()">🔍 &nbsp;Calculate TCO</button>
+    <button class="calc-button" onclick="calculate()">ð &nbsp;Calculate TCO</button>
   </div>
 
   <!-- RESULTS -->
@@ -787,15 +810,15 @@
     </div>
     <div class="charts-grid-3">
       <div class="chart-card">
-        <h3>Annual Cost Breakdown — Diesel</h3>
+        <h3>Annual Cost Breakdown â Diesel</h3>
         <div class="chart-container"><canvas id="chartBreakdownIce"></canvas></div>
       </div>
       <div class="chart-card">
-        <h3>Annual Cost Breakdown — H₂</h3>
+        <h3>Annual Cost Breakdown â Hâ</h3>
         <div class="chart-container"><canvas id="chartBreakdownH2"></canvas></div>
       </div>
       <div class="chart-card">
-        <h3>Annual Cost Breakdown — BEV</h3>
+        <h3>Annual Cost Breakdown â BEV</h3>
         <div class="chart-container"><canvas id="chartBreakdownBev"></canvas></div>
       </div>
     </div>
@@ -886,9 +909,9 @@ function buildEnergyTable() {
   }
   let html = `<table class="toll-table"><thead><tr>
     <th>Year</th>
-    <th><span class="toll-col-header" style="background:var(--ice-orange);">⛽ Diesel (CHF/l)</span><br><button class="fill-all-btn" onclick="fillAllEnergy('Ice')">▼ Apply to all</button></th>
-    <th><span class="toll-col-header" style="background:var(--h2-green);">H₂ (CHF/kg)</span><br><button class="fill-all-btn" onclick="fillAllEnergy('H2')">▼ Apply to all</button></th>
-    <th><span class="toll-col-header" style="background:var(--bev-purple);">🔋 Electricity (CHF/kWh)</span><br><button class="fill-all-btn" onclick="fillAllEnergy('Bev')">▼ Apply to all</button></th>
+    <th><span class="toll-col-header" style="background:var(--ice-orange);">â½ Diesel (CHF/l)</span><br><button class="fill-all-btn" onclick="fillAllEnergy('Ice')">â¼ Apply to all</button></th>
+    <th><span class="toll-col-header" style="background:var(--h2-green);">Hâ (CHF/kg)</span><br><button class="fill-all-btn" onclick="fillAllEnergy('H2')">â¼ Apply to all</button></th>
+    <th><span class="toll-col-header" style="background:var(--bev-purple);">ð Electricity (CHF/kWh)</span><br><button class="fill-all-btn" onclick="fillAllEnergy('Bev')">â¼ Apply to all</button></th>
   </tr></thead><tbody>`;
   for (let y = 1; y <= years; y++) {
     html += `<tr>
@@ -926,9 +949,9 @@ function buildTollTable() {
   }
   let html = `<table class="toll-table"><thead><tr>
     <th>Year</th>
-    <th><span class="toll-col-header" style="background:var(--ice-orange);">⛽ Diesel</span><br><button class="fill-all-btn" onclick="fillAllToll('Ice')">▼ Apply to all</button></th>
-    <th><span class="toll-col-header" style="background:var(--h2-green);">H₂ FCEV</span><br><button class="fill-all-btn" onclick="fillAllToll('H2')">▼ Apply to all</button></th>
-    <th><span class="toll-col-header" style="background:var(--bev-purple);">🔋 BEV</span><br><button class="fill-all-btn" onclick="fillAllToll('Bev')">▼ Apply to all</button></th>
+    <th><span class="toll-col-header" style="background:var(--ice-orange);">â½ Diesel</span><br><button class="fill-all-btn" onclick="fillAllToll('Ice')">â¼ Apply to all</button></th>
+    <th><span class="toll-col-header" style="background:var(--h2-green);">Hâ FCEV</span><br><button class="fill-all-btn" onclick="fillAllToll('H2')">â¼ Apply to all</button></th>
+    <th><span class="toll-col-header" style="background:var(--bev-purple);">ð BEV</span><br><button class="fill-all-btn" onclick="fillAllToll('Bev')">â¼ Apply to all</button></th>
   </tr></thead><tbody>`;
   for (let y = 1; y <= years; y++) {
     html += `<tr>
@@ -951,9 +974,15 @@ function calculate() {
 
   const annualKm = v('annualKm');
   const years = Math.max(1, Math.min(15, Math.round(v('years'))));
-  const priceIce = v('priceIce');
-  const priceH2 = v('priceH2');
-  const priceBev = v('priceBev');
+  const priceIceGross = v('priceIce');
+  const priceH2Gross = v('priceH2');
+  const priceBevGross = v('priceBev');
+  const subsidyIce = v('subsidyIce');
+  const subsidyH2 = v('subsidyH2');
+  const subsidyBev = v('subsidyBev');
+  const priceIce = Math.max(0, priceIceGross - subsidyIce);
+  const priceH2 = Math.max(0, priceH2Gross - subsidyH2);
+  const priceBev = Math.max(0, priceBevGross - subsidyBev);
   const residualIce = v('residualIce');
   const residualH2 = v('residualH2');
   const residualBev = v('residualBev');
@@ -961,7 +990,7 @@ function calculate() {
   const cur = document.getElementById('currency').value || 'CHF';
   document.getElementById('currencyNote').textContent = 'All values in ' + cur;
 
-  // Per-km fixed costs × annual km
+  // Per-km fixed costs Ã annual km
   const iceServiceYear = v('iceServiceKm') * annualKm;
   const iceRepairYear = v('iceRepairKm') * annualKm;
   const iceWearYear = v('iceMaintKm') * annualKm;
@@ -1079,18 +1108,33 @@ function calculate() {
 
   // Find cheapest
   const minTco = Math.min(totalIce, totalH2, totalBev);
-  const cheapest = minTco === totalH2 ? 'H₂' : (minTco === totalBev ? 'BEV' : 'Diesel');
+  const cheapest = minTco === totalH2 ? 'Hâ' : (minTco === totalBev ? 'BEV' : 'Diesel');
 
   // SUMMARY
   const summaryGrid = document.getElementById('summaryGrid');
   summaryGrid.innerHTML = `
+    <div class="summary-card">
+      <div class="label">Net Price Diesel</div>
+      <div class="value cost-ice">${fmt(priceIce)}</div>
+      <div class="sub">${subsidyIce > 0 ? fmt(priceIceGross) + ' - ' + fmt(subsidyIce) + ' subsidies' : 'No subsidies'}</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">Net Price H\u2082</div>
+      <div class="value cost-h2">${fmt(priceH2)}</div>
+      <div class="sub">${subsidyH2 > 0 ? fmt(priceH2Gross) + ' - ' + fmt(subsidyH2) + ' subsidies' : 'No subsidies'}</div>
+    </div>
+    <div class="summary-card">
+      <div class="label">Net Price BEV</div>
+      <div class="value cost-bev">${fmt(priceBev)}</div>
+      <div class="sub">${subsidyBev > 0 ? fmt(priceBevGross) + ' - ' + fmt(subsidyBev) + ' subsidies' : 'No subsidies'}</div>
+    </div>
     <div class="summary-card">
       <div class="label">TCO Diesel Total</div>
       <div class="value cost-ice">${fmt(totalIce)}</div>
       <div class="sub">${fmtDec(totalIce / totalKm, 2)}/km</div>
     </div>
     <div class="summary-card">
-      <div class="label">TCO H₂ Total</div>
+      <div class="label">TCO Hâ Total</div>
       <div class="value cost-h2">${fmt(totalH2)}</div>
       <div class="sub">${fmtDec(totalH2 / totalKm, 2)}/km</div>
     </div>
@@ -1116,9 +1160,9 @@ function calculate() {
   yt.querySelector('thead').innerHTML = `<tr>
     <th>Year</th><th>Km cumul.</th>
     <th>Diesel Annual</th><th>Diesel TCO cum.</th>
-    <th>H₂ Annual</th><th>H₂ TCO cum.</th>
+    <th>Hâ Annual</th><th>Hâ TCO cum.</th>
     <th>BEV Annual</th><th>BEV TCO cum.</th>
-    <th>H₂ vs Diesel</th><th>BEV vs Diesel</th>
+    <th>Hâ vs Diesel</th><th>BEV vs Diesel</th>
   </tr>`;
   yt.querySelector('tbody').innerHTML = data.map(d => `<tr>
     <td>Year ${d.year}</td>
@@ -1129,14 +1173,14 @@ function calculate() {
     <td class="td-h2">${fmt(d.h2Cum)}</td>
     <td class="td-bev">${fmt(d.bevYear)}</td>
     <td class="td-bev">${fmt(d.bevCum)}</td>
-    <td class="td-saving">${d.diffH2 >= 0 ? '−' : '+'} ${fmt(Math.abs(d.diffH2))}</td>
-    <td class="td-saving">${d.diffBev >= 0 ? '−' : '+'} ${fmt(Math.abs(d.diffBev))}</td>
+    <td class="td-saving">${d.diffH2 >= 0 ? 'â' : '+'} ${fmt(Math.abs(d.diffH2))}</td>
+    <td class="td-saving">${d.diffBev >= 0 ? 'â' : '+'} ${fmt(Math.abs(d.diffBev))}</td>
   </tr>`).join('');
 
   // KM TABLE
   const kt = document.getElementById('kmTable');
   kt.querySelector('thead').innerHTML = `<tr>
-    <th>Category</th><th>Diesel (/km)</th><th>H₂ (/km)</th><th>BEV (/km)</th><th>Cheapest</th>
+    <th>Category</th><th>Diesel (/km)</th><th>Hâ (/km)</th><th>BEV (/km)</th><th>Cheapest</th>
   </tr>`;
 
   const categories = [
@@ -1155,7 +1199,7 @@ function calculate() {
 
   const cheapLabel = (ice, h2, bev) => {
     const m = Math.min(ice, h2, bev);
-    if (m === h2) return '<span class="td-h2">H₂</span>';
+    if (m === h2) return '<span class="td-h2">Hâ</span>';
     if (m === bev) return '<span class="td-bev">BEV</span>';
     return '<span class="td-ice">Diesel</span>';
   };
@@ -1174,7 +1218,7 @@ function calculate() {
     <td><strong>${cheapLabel(totalPerKmIce, totalPerKmH2, totalPerKmBev)}</strong></td>
   </tr>`;
 
-  // CHART — Years
+  // CHART â Years
   const labelsY = data.map(d => `Year ${d.year}`);
   charts.years = new Chart(document.getElementById('chartYears'), {
     type: 'line',
@@ -1182,7 +1226,7 @@ function calculate() {
       labels: labelsY,
       datasets: [
         { label: 'Diesel TCO', data: data.map(d => d.iceCum), borderColor: '#E17055', backgroundColor: 'rgba(225,112,85,0.1)', fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 7, borderWidth: 3 },
-        { label: 'H₂ TCO', data: data.map(d => d.h2Cum), borderColor: '#00B894', backgroundColor: 'rgba(0,184,148,0.08)', fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 7, borderWidth: 3 },
+        { label: 'Hâ TCO', data: data.map(d => d.h2Cum), borderColor: '#00B894', backgroundColor: 'rgba(0,184,148,0.08)', fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 7, borderWidth: 3 },
         { label: 'BEV TCO', data: data.map(d => d.bevCum), borderColor: '#6C5CE7', backgroundColor: 'rgba(108,92,231,0.08)', fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 7, borderWidth: 3 }
       ]
     },
@@ -1193,7 +1237,7 @@ function calculate() {
     }
   });
 
-  // CHART — KM
+  // CHART â KM
   const labelsKm = data.map(d => `${(d.km / 1000).toFixed(0)}k km`);
   charts.km = new Chart(document.getElementById('chartKm'), {
     type: 'line',
@@ -1201,7 +1245,7 @@ function calculate() {
       labels: labelsKm,
       datasets: [
         { label: 'Diesel TCO', data: data.map(d => d.iceCum), borderColor: '#E17055', backgroundColor: 'rgba(225,112,85,0.1)', fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 7, borderWidth: 3 },
-        { label: 'H₂ TCO', data: data.map(d => d.h2Cum), borderColor: '#00B894', backgroundColor: 'rgba(0,184,148,0.08)', fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 7, borderWidth: 3 },
+        { label: 'Hâ TCO', data: data.map(d => d.h2Cum), borderColor: '#00B894', backgroundColor: 'rgba(0,184,148,0.08)', fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 7, borderWidth: 3 },
         { label: 'BEV TCO', data: data.map(d => d.bevCum), borderColor: '#6C5CE7', backgroundColor: 'rgba(108,92,231,0.08)', fill: true, tension: 0.3, pointRadius: 5, pointHoverRadius: 7, borderWidth: 3 }
       ]
     },
@@ -1212,7 +1256,7 @@ function calculate() {
     }
   });
 
-  // CHART — ICE Breakdown (Doughnut)
+  // CHART â ICE Breakdown (Doughnut)
   const iceBreakdown = [iceFuelYear, iceServiceYear, iceRepairYear, iceWearYear, iceTollYear, iceInsYear, driverCost];
   const breakdownLabels = ['Fuel', 'Service', 'Repair', 'Wear & Tear', 'Toll/LSVA', 'Insurance', 'Driver'];
   const sharedColors = ['#81ECEC', '#FDCB6E', '#74B9FF', '#FDA7DF', '#B2BEC3', '#636E72'];
@@ -1226,9 +1270,9 @@ function calculate() {
     }
   });
 
-  // CHART — H2 Breakdown (Doughnut)
+  // CHART â H2 Breakdown (Doughnut)
   const h2Breakdown = [h2FuelYear, h2ServiceYear, h2RepairYear, h2WearYear, h2TollYear, h2InsYear, driverCost];
-  const h2Labels = ['H₂ Fuel', 'Service', 'Repair', 'Wear & Tear', 'Toll/LSVA', 'Insurance', 'Driver'];
+  const h2Labels = ['Hâ Fuel', 'Service', 'Repair', 'Wear & Tear', 'Toll/LSVA', 'Insurance', 'Driver'];
   const h2Colors = ['#00B894', ...sharedColors];
   charts.breakH2 = new Chart(document.getElementById('chartBreakdownH2'), {
     type: 'doughnut',
@@ -1239,7 +1283,7 @@ function calculate() {
     }
   });
 
-  // CHART — BEV Breakdown (Doughnut)
+  // CHART â BEV Breakdown (Doughnut)
   const bevBreakdown = [bevFuelYear, bevServiceYear, bevRepairYear, bevWearYear, bevTollYear, bevInsYear, driverCost];
   const bevLabels = ['Electricity', 'Service', 'Repair', 'Wear & Tear', 'Toll/LSVA', 'Insurance', 'Driver'];
   const bevColors = ['#6C5CE7', ...sharedColors];
@@ -1252,14 +1296,14 @@ function calculate() {
     }
   });
 
-  // CHART — Difference (H2 and BEV vs Diesel)
+  // CHART â Difference (H2 and BEV vs Diesel)
   charts.diff = new Chart(document.getElementById('chartDiff'), {
     type: 'bar',
     data: {
       labels: labelsY,
       datasets: [
         {
-          label: 'H₂ Savings vs. Diesel',
+          label: 'Hâ Savings vs. Diesel',
           data: data.map(d => d.diffH2),
           backgroundColor: 'rgba(0,184,148,0.7)',
           borderColor: '#00B894',
@@ -1290,10 +1334,10 @@ function calculate() {
   const beDiv = document.getElementById('breakEvenText');
 
   let beHtml = `<p><strong>Diesel TCO/km:</strong> ${fmtDec(totalPerKmIce, 3)}</p>`;
-  beHtml += `<p><strong>H₂ TCO/km:</strong> ${fmtDec(totalPerKmH2, 3)}</p>`;
+  beHtml += `<p><strong>Hâ TCO/km:</strong> ${fmtDec(totalPerKmH2, 3)}</p>`;
   beHtml += `<p><strong>BEV TCO/km:</strong> ${fmtDec(totalPerKmBev, 3)}</p>`;
   beHtml += `<p><strong>Annual Opex Diesel:</strong> ${fmt(iceOpexYear)}</p>`;
-  beHtml += `<p><strong>Annual Opex H₂:</strong> ${fmt(h2OpexYear)}</p>`;
+  beHtml += `<p><strong>Annual Opex Hâ:</strong> ${fmt(h2OpexYear)}</p>`;
   beHtml += `<p><strong>Annual Opex BEV:</strong> ${fmt(bevOpexYear)}</p>`;
 
   // H2 vs Diesel break-even
@@ -1314,15 +1358,15 @@ function calculate() {
   if (breakEvenH2 && breakEvenH2 > 0 && breakEvenH2 <= 20) {
     const beKm = breakEvenH2 * annualKm;
     beHtml += `<p style="margin-top:8px;padding:12px;background:#E8F8F5;border-radius:8px;font-weight:600;color:#00A381;">
-      ✅ H₂ break-even after approx. <strong>${fmtDec(breakEvenH2, 1)} years</strong> / <strong>${(beKm/1000).toFixed(0)}'000 km</strong>
+      â Hâ break-even after approx. <strong>${fmtDec(breakEvenH2, 1)} years</strong> / <strong>${(beKm/1000).toFixed(0)}'000 km</strong>
     </p>`;
   } else if (savingH2 > 0) {
     beHtml += `<p style="margin-top:8px;padding:12px;background:#E8F8F5;border-radius:8px;font-weight:600;color:#00A381;">
-      ✅ H₂ is cheaper from the start
+      â Hâ is cheaper from the start
     </p>`;
   } else {
     beHtml += `<p style="margin-top:8px;padding:12px;background:#FFEAA7;border-radius:8px;font-weight:600;color:#D35400;">
-      ⚠️ No H₂ break-even within the analysis period — Diesel is currently cheaper
+      â ï¸ No Hâ break-even within the analysis period â Diesel is currently cheaper
     </p>`;
   }
 
@@ -1331,37 +1375,37 @@ function calculate() {
   if (breakEvenBev && breakEvenBev > 0 && breakEvenBev <= 20) {
     const beKm = breakEvenBev * annualKm;
     beHtml += `<p style="margin-top:8px;padding:12px;background:#F0E6FF;border-radius:8px;font-weight:600;color:#5A4BD1;">
-      ✅ BEV break-even after approx. <strong>${fmtDec(breakEvenBev, 1)} years</strong> / <strong>${(beKm/1000).toFixed(0)}'000 km</strong>
+      â BEV break-even after approx. <strong>${fmtDec(breakEvenBev, 1)} years</strong> / <strong>${(beKm/1000).toFixed(0)}'000 km</strong>
     </p>`;
   } else if (savingBev > 0) {
     beHtml += `<p style="margin-top:8px;padding:12px;background:#F0E6FF;border-radius:8px;font-weight:600;color:#5A4BD1;">
-      ✅ BEV is cheaper from the start
+      â BEV is cheaper from the start
     </p>`;
   } else {
     beHtml += `<p style="margin-top:8px;padding:12px;background:#FFEAA7;border-radius:8px;font-weight:600;color:#D35400;">
-      ⚠️ No BEV break-even within the analysis period — Diesel is currently cheaper
+      â ï¸ No BEV break-even within the analysis period â Diesel is currently cheaper
     </p>`;
   }
 
-  // H₂ PARITY PRICE — at which avg H₂ price/kg does H₂ TCO equal the cheapest competitor?
+  // Hâ PARITY PRICE â at which avg Hâ price/kg does Hâ TCO equal the cheapest competitor?
   const cheapestTco = Math.min(totalIce, totalBev);
   const cheapestLabel = cheapestTco === totalIce ? 'Diesel' : 'BEV';
   // h2 non-fuel TCO = acquisition + maintenance + toll(total) + insurance + driver - residual
   const h2FixedTco = priceH2 + years * (h2MaintYear + h2InsYear + driverCost) + h2TollTotal - residualH2;
-  const h2ConsumptionTotal = h2ConsPerKm * totalKm; // total kg H₂
+  const h2ConsumptionTotal = h2ConsPerKm * totalKm; // total kg Hâ
   let h2ParityPrice = null;
   if (h2ConsumptionTotal > 0) {
     h2ParityPrice = (cheapestTco - h2FixedTco) / h2ConsumptionTotal;
   }
 
-  // Average current H₂ price across all years
+  // Average current Hâ price across all years
   const currentH2Price = h2FuelTotal / (h2ConsumptionTotal || 1);
   if (h2ParityPrice !== null && h2ParityPrice > 0) {
     const diff = h2ParityPrice - currentH2Price;
     const diffPct = currentH2Price > 0 ? ((h2ParityPrice - currentH2Price) / currentH2Price * 100) : 0;
     const isAbove = currentH2Price > h2ParityPrice;
     beHtml += `<div style="margin-top:16px;padding:16px;background:linear-gradient(135deg,#EBF5FB,#D6EAF8);border-radius:10px;border:1px solid #AED6F1;">
-      <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#2471A3;margin-bottom:8px;">⚖️ H₂ Price Parity vs. ${cheapestLabel}</div>
+      <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:#2471A3;margin-bottom:8px;">âï¸ Hâ Price Parity vs. ${cheapestLabel}</div>
       <div style="display:flex;align-items:baseline;gap:8px;margin-bottom:4px;">
         <span style="font-size:28px;font-weight:800;color:#1A5276;">${fmtDec(h2ParityPrice, 2)}/kg</span>
         <span style="font-size:13px;color:#5A6B7F;">to match ${cheapestLabel} TCO of ${fmt(cheapestTco)}</span>
@@ -1369,7 +1413,7 @@ function calculate() {
       <div style="font-size:13px;color:${isAbove ? '#D35400' : '#00A381'};font-weight:600;">
         ${isAbove
           ? `Avg. price (${fmtDec(currentH2Price, 2)}/kg) is <strong>${fmtDec(Math.abs(diff), 2)} above</strong> parity (${fmtDec(Math.abs(diffPct), 1)}% too high)`
-          : `Avg. price (${fmtDec(currentH2Price, 2)}/kg) is <strong>${fmtDec(Math.abs(diff), 2)} below</strong> parity — H₂ is already competitive`
+          : `Avg. price (${fmtDec(currentH2Price, 2)}/kg) is <strong>${fmtDec(Math.abs(diff), 2)} below</strong> parity â Hâ is already competitive`
         }
       </div>
     </div>`;
