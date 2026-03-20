@@ -1145,17 +1145,6 @@ function calculate() {
       <div class="value cost-bev">${fmt(totalBev)}</div>
       <div class="sub">${fmtDec(totalBev / totalKm, 2)}/km</div>
     </div>
-    <div style="grid-column:1/-1;height:1px;background:var(--border);margin:4px 0;"></div>
-    <div class="summary-card">
-      <div class="label">Most Economical</div>
-      <div class="value saving">${cheapest}</div>
-      <div class="sub">${fmt(minTco)}</div>
-    </div>
-    <div class="summary-card" style="grid-column: span 2;">
-      <div class="label">Savings vs. Diesel</div>
-      <div class="value saving">${fmt(totalIce - minTco)}</div>
-      <div class="sub">over ${years} years / ${(totalKm/1000).toFixed(0)}k km</div>
-    </div>
   `;
 
   // YEARLY TABLE
