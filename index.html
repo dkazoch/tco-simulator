@@ -282,6 +282,7 @@
     width: 100%;
     border-collapse: collapse;
     font-size: 13px;
+    table-layout: fixed;
   }
   .toll-table th {
     padding: 8px 12px;
@@ -308,7 +309,8 @@
   }
   .toll-table input {
     width: 100%;
-    max-width: 100px;
+    max-width: none;
+    box-sizing: border-box;
     padding: 7px 10px;
     border: 1.5px solid var(--border);
     border-radius: 8px;
